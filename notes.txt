@@ -1,0 +1,9 @@
+        Group1  Group2  Group3  Group4
+IKto    1,2     4,5     7,11            GKto
+        1,2     3,4     5,6             7
+IKslow1 1,2     4,5             9,10    GKslow1
+        8,9     10,11           12,13   14
+IKslow2                         2       GKslow2
+                                15      16
+IKss            1       2       3       GKss
+                17      18      19      20
