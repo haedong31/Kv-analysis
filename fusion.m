@@ -2,11 +2,11 @@
 clc
 close all
 clearvars
-warning('off', 'all')
+warning('off','all')
 
-group = "mgat1ko";
-exp_num = "exp55";
-save_dir = fullfile(pwd,strcat("calib_",exp_num),group);
+group = "wt";
+exp_num = "exp1";
+save_dir = fullfile(pwd,strcat("fusion_",exp_num),group);
 mkdir(save_dir)
 
 % currents to be included: iktof, iktos, ikslow1, ikslow2, ikss
