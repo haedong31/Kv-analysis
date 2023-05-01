@@ -31,19 +31,9 @@ pdefault{5} = [0.0862,1235.5,13.17,0.0611];
 [p0, lb, ub] = gen_param_bounds(mdl_struct, psize, pdefault);
 
 holdv = -70;
-minv = -30;
-vstep = 10;
-num_steps = 9;
 ek = -91.1;
-
-ideal_hold_time = 120;
-ideal_end_time = 4.6*1000;
-
-% save time information later when experimental data imlported
-protocol = cell(6,1);
 protocol{1} = holdv;
 protocol{2} = ek;
-protocol{3} = minv:vstep:(minv+vstep*(num_steps-1));
 
 %% ----- Optimization loop (populational) ----- %%
 % meta data of experimental datasets
@@ -54,10 +44,11 @@ pop_file_names(cellfun(@isempty,pop_file_names)) = []; % exclude null rows
 pop_file_names = string(pop_file_names);
 num_pop_files = length(pop_file_names);
 
-% import entire set of experimental data
+protocol{3} = -30:10:50;
 pop_ideal_holdt = 120; 
 pop_ideal_endt = 4.6*1000;
 
+% import entire set of experimental data
 trace_data = cell(1,num_pop_files);
 t = cell(1,num_pop_files);
 holdt = cell(1,num_pop_files);
